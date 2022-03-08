@@ -29,12 +29,26 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="lblHello">
       <property name="text">
        <string>HELLO!</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblSimpleText">
+      <property name="text">
+       <string>This is a simple text</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnOpenSettings">
+      <property name="text">
+       <string>Open Settings</string>
       </property>
      </widget>
     </item>

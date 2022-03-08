@@ -13,4 +13,5 @@ TRANSLATIONS += \
     resources/translations/ca_ES.ts \
     resources/translations/en_US.ts \
     resources/translations/es_ES.ts \
-    resources/translations/fr_FR.ts
+    resources/translations/fr_FR.ts \
+    resources/translations/cs_CZ.ts

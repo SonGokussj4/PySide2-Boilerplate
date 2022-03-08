@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="es">
+<!DOCTYPE TS><TS version="1.1" language="cs_CZ">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="34"/>
         <source>HELLO!</source>
-        <translation>HOLA!</translation>
+        <translation>AHOJ!</translation>
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="14"/>
         <source>App</source>
-        <translation>Application</translation>
+        <translation>App</translation>
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="44"/>
         <source>This is a simple text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohle je jednoduchý text</translation>
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="51"/>

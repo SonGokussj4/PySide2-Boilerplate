@@ -5,6 +5,7 @@ from PySide2.QtCore import QFile, QTextStream, QTranslator, QLocale
 from PySide2.QtWidgets import QApplication
 
 from .views.MainWindow import MainWindow
+from .views.SettingsWindow import SettingsWindow
 
 from .ui import resources_rc  # noqa
 
@@ -24,7 +25,8 @@ def main():
     f.close()
 
     translator = QTranslator()
-    translator.load(':/translations/' + QLocale.system().name() + '.qm')
+    # translator.load(':/translations/' + QLocale.system().name() + '.qm')
+    translator.load(':/translations/cs_CZ.qm')
     app.installTranslator(translator)
 
     mw = MainWindow()

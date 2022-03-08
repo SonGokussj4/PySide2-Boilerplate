@@ -55,6 +55,9 @@ UI files, translations and resources can be built like this::
 
     python setup.py build_res
 
+    linguist
+    lrelease app.pro
+
 Note that this command is automatically run before running ``sdist`` and
 ``bdist_app`` commands.
 
