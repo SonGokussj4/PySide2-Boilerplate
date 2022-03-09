@@ -8,7 +8,7 @@ from .views.MainWindow import MainWindow
 from .views.SettingsWindow import SettingsWindow
 
 from .ui import resources_rc  # noqa
-
+from .helpers.utils import load_translations
 
 def main():
     app = QApplication(sys.argv)
@@ -24,10 +24,11 @@ def main():
     app.setStyleSheet(QTextStream(f).readAll())
     f.close()
 
-    translator = QTranslator()
-    # translator.load(':/translations/' + QLocale.system().name() + '.qm')
-    translator.load(':/translations/cs_CZ.qm')
-    app.installTranslator(translator)
+    # load_translations(app, 'cs-CZ')
+    trans = QTranslator()
+    # trans.load(':/translations/' + QLocale.system().name() + '.qm')
+    trans.load(':/translations/cs_CZ.qm')
+    app.installTranslator(trans)
 
     mw = MainWindow()
     mw.show()

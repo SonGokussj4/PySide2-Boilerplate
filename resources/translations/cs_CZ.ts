@@ -20,7 +20,40 @@
     <message>
         <location filename="resources/ui/MainWindow.ui" line="51"/>
         <source>Open Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít Nastavení</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWindow</name>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="14"/>
+        <source>Settings</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="40"/>
+        <source>Czech</source>
+        <translation>Čeština</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="45"/>
+        <source>English</source>
+        <translation>Angličtina</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="50"/>
+        <source>France</source>
+        <translation>Francouzština</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="58"/>
+        <source>Langauge:</source>
+        <translation>Jazyk:</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="65"/>
+        <source>Apply</source>
+        <translation>Použít</translation>
     </message>
 </context>
 </TS>

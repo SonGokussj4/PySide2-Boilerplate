@@ -23,4 +23,37 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>SettingsWindow</name>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="14"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="40"/>
+        <source>Czech</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="45"/>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="50"/>
+        <source>France</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="58"/>
+        <source>Langauge:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="resources/ui/SettingsWindow.ui" line="65"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>
