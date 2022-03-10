@@ -17,8 +17,6 @@ class SettingsWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.trans = QTranslator(self)
-
         self.ui = Ui_SettingsWindow()
         self.ui.setupUi(self)
 
@@ -26,7 +24,25 @@ class SettingsWindow(QWidget):
         # self.ui.cboSelectLanguage.currentTextChanged.connect(self.on_cboSelectLanguage_currentTextChanged)
         self.ui.btnApplyLanguage.clicked.connect(self.on_btnApplyLanguage_clicked)
 
+        self.ui.cboSelectLanguage.currentIndexChanged.connect(self.change_func)
+
+        self.trans = QTranslator(self)
         self.ui.retranslateUi(self)
+
+    @QtCore.Slot(int)
+    def change_func(self, index):
+        text = self.ui.cboSelectLanguage.currentText()
+        code = get_language_code(text)
+        if code:
+            self.trans.load(f':/translations/{code}.qm')
+            QApplication.instance().installTranslator(self.trans)
+        else:
+            QApplication.instance().removeTranslator(self.trans)
+
+    def changeEvent(self, event):
+        if event.type() == QtCore.QEvent.LanguageChange:
+            self.ui.retranslateUi(self)
+        super(SettingsWindow, self).changeEvent(event)
 
     def on_btnApplyLanguage_clicked(self):
         text = self.ui.cboSelectLanguage.currentText()

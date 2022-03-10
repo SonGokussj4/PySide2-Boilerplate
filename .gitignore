@@ -14,4 +14,6 @@ build*
 *_ui.py
 *_rc.py
 *.qm
+
 .vscode/
+.qt_for_python/
