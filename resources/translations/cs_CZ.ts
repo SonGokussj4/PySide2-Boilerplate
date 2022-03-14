@@ -22,6 +22,21 @@
         <source>Open Settings</source>
         <translation>Otevřít Nastavení</translation>
     </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="68"/>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="81"/>
+        <source>English</source>
+        <translation>Angličtina</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="90"/>
+        <source>Czech</source>
+        <translation>Čeština</translation>
+    </message>
 </context>
 <context>
     <name>SettingsWindow</name>

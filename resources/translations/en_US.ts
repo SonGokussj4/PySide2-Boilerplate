@@ -22,6 +22,21 @@
         <source>Open Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="68"/>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="81"/>
+        <source>English</source>
+        <translation>English</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="90"/>
+        <source>Czech</source>
+        <translation>Czech</translation>
+    </message>
 </context>
 <context>
     <name>SettingsWindow</name>
@@ -33,12 +48,12 @@
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="40"/>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Czech</translation>
     </message>
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="45"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">English</translation>
     </message>
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="50"/>

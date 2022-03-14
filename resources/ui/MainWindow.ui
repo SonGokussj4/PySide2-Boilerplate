@@ -54,6 +54,42 @@
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="actionEnglish"/>
+    <addaction name="actionCzech"/>
+   </widget>
+   <addaction name="menuLanguage"/>
+  </widget>
+  <action name="actionEnglish">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/icons/language_en-US.png</normaloff>:/icons/language_en-US.png</iconset>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionCzech">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/icons/language_cs-CZ.png</normaloff>:/icons/language_cs-CZ.png</iconset>
+   </property>
+   <property name="text">
+    <string>Czech</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../resources.qrc"/>
