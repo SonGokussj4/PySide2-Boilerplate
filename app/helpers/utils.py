@@ -6,13 +6,13 @@ logger = setup_logger(__name__)
 
 def get_language_code(lang_text):
     if lang_text in {"Czech", "Čeština"}:
-        return "cs-CZ"
+        return "cs_CZ"
 
     elif lang_text in {"English", "Angličtina"}:
-        return "en-US"
+        return "en_US"
 
     logger.warning("Fallback to Czech Language")
-    return "cs-CZ"
+    return "cs_CZ"
 
 
 def load_translations(app, code):

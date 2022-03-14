@@ -29,16 +29,6 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="lblHello">
-      <property name="text">
-       <string>HELLO!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QLabel" name="lblSimpleText">
       <property name="text">
        <string>This is a simple text</string>
@@ -67,12 +57,18 @@
     <property name="title">
      <string>Language</string>
     </property>
-    <addaction name="actionEnglish"/>
-    <addaction name="actionCzech"/>
+    <addaction name="action_English"/>
+    <addaction name="action_Czech"/>
    </widget>
    <addaction name="menuLanguage"/>
   </widget>
-  <action name="actionEnglish">
+  <action name="action_English">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources.qrc">
      <normaloff>:/icons/language_en-US.png</normaloff>:/icons/language_en-US.png</iconset>
@@ -81,7 +77,10 @@
     <string>English</string>
    </property>
   </action>
-  <action name="actionCzech">
+  <action name="action_Czech">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="../resources.qrc">
      <normaloff>:/icons/language_cs-CZ.png</normaloff>:/icons/language_cs-CZ.png</iconset>

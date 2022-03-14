@@ -5,7 +5,7 @@
     <message>
         <location filename="resources/ui/MainWindow.ui" line="34"/>
         <source>HELLO!</source>
-        <translation>AHOJ!</translation>
+        <translation type="obsolete">AHOJ!</translation>
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="14"/>
@@ -13,27 +13,27 @@
         <translation>App</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="44"/>
+        <location filename="resources/ui/MainWindow.ui" line="34"/>
         <source>This is a simple text</source>
         <translation>Tohle je jednoduchý text</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="51"/>
+        <location filename="resources/ui/MainWindow.ui" line="41"/>
         <source>Open Settings</source>
-        <translation>Otevřít Nastavení</translation>
+        <translation type="unfinished">Otevřít Nastavení</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="68"/>
+        <location filename="resources/ui/MainWindow.ui" line="58"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="81"/>
+        <location filename="resources/ui/MainWindow.ui" line="77"/>
         <source>English</source>
         <translation>Angličtina</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="90"/>
+        <location filename="resources/ui/MainWindow.ui" line="89"/>
         <source>Czech</source>
         <translation>Čeština</translation>
     </message>

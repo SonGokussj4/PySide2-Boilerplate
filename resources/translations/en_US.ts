@@ -9,33 +9,28 @@
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="34"/>
-        <source>HELLO!</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="resources/ui/MainWindow.ui" line="44"/>
         <source>This is a simple text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="51"/>
-        <source>Open Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="resources/ui/MainWindow.ui" line="68"/>
+        <location filename="resources/ui/MainWindow.ui" line="58"/>
         <source>Language</source>
         <translation>Language</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="81"/>
+        <location filename="resources/ui/MainWindow.ui" line="77"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="90"/>
+        <location filename="resources/ui/MainWindow.ui" line="89"/>
         <source>Czech</source>
         <translation>Czech</translation>
+    </message>
+    <message>
+        <location filename="resources/ui/MainWindow.ui" line="41"/>
+        <source>Open Settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
