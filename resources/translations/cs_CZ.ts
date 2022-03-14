@@ -20,7 +20,7 @@
     <message>
         <location filename="resources/ui/MainWindow.ui" line="41"/>
         <source>Open Settings</source>
-        <translation type="unfinished">Otevřít Nastavení</translation>
+        <translation>Otevřít Nastavení</translation>
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="58"/>

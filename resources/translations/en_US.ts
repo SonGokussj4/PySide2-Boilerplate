@@ -10,7 +10,7 @@
     <message>
         <location filename="resources/ui/MainWindow.ui" line="34"/>
         <source>This is a simple text</source>
-        <translation type="unfinished"></translation>
+        <translation>This is a simple text</translation>
     </message>
     <message>
         <location filename="resources/ui/MainWindow.ui" line="58"/>
@@ -30,7 +30,7 @@
     <message>
         <location filename="resources/ui/MainWindow.ui" line="41"/>
         <source>Open Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Open Settings</translation>
     </message>
 </context>
 <context>
@@ -38,17 +38,17 @@
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="40"/>
         <source>Czech</source>
-        <translation type="unfinished">Czech</translation>
+        <translation>Czech</translation>
     </message>
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="45"/>
         <source>English</source>
-        <translation type="unfinished">English</translation>
+        <translation>English</translation>
     </message>
     <message>
         <location filename="resources/ui/SettingsWindow.ui" line="50"/>
