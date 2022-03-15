@@ -15,6 +15,17 @@ def get_language_code(lang_text):
     return "cs_CZ"
 
 
+def get_language_from_code(lang_code):
+    if lang_code == "cs_CZ":
+        return "Czech"
+
+    elif lang_code == "en_US":
+        return "English"
+
+    logger.warning("Fallback to Czech Language")
+    return "Czech"
+
+
 def load_translations(app, code):
     """Load translations by code."""
     trans = QTranslator()

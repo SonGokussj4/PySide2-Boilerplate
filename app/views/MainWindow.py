@@ -1,10 +1,10 @@
-from PySide2.QtWidgets import QMainWindow, QActionGroup, QDesktopWidget, QMessageBox, QApplication
+from PySide2.QtWidgets import QMainWindow, QActionGroup, QDesktopWidget, QMessageBox, QApplication, QAction, QMenu
 from PySide2.QtGui import Qt, QCloseEvent, QResizeEvent
-from PySide2.QtCore import QSettings, QPoint, QSize, QTranslator, QCoreApplication
+from PySide2.QtCore import QSettings, QPoint, QSize, QTranslator, QCoreApplication, QEvent
 
 from .SettingsWindow import SettingsWindow
 from ..ui.MainWindow_ui import Ui_MainWindow
-from ..helpers.utils import get_language_code
+from ..helpers.utils import get_language_code, get_language_from_code
 from ..helpers.logging import setup_logger
 from ..helpers import constants
 
@@ -14,6 +14,8 @@ logger.debug('This MainWindow message should appear on the console')
 
 class MainWindow(QMainWindow):
     """Main Window."""
+
+    EXIT_CODE_REBOOT = -123
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -51,25 +53,17 @@ class MainWindow(QMainWindow):
         language_code = self.settings.value("language", 'en_US')
         self.changeLanguage(language_code)
 
-        if language_code == 'en_US':
-            self.ui.action_English.setChecked(True)
-        elif language_code == 'cs_CZ':
-            self.ui.action_Czech.setChecked(True)
+        language_name = get_language_from_code(language_code)
+        language_object = [self.ui.action_English, self.ui.action_Czech][["English", "Czech"].index(language_name)]
+        language_object.setChecked(True)
 
     def changeLanguage(self, language_code):
         logger.debug(f"Changing language to: {language_code}")
         self.settings.setValue("language", language_code)
 
         # Set language
-        QApplication.instance().removeTranslator(self.translator)
         self.translator.load(f':/translations/{language_code}.qm')
         QApplication.instance().installTranslator(self.translator)
-
-        print("===============================")
-        _btnOpenSettings = QCoreApplication.translate("MainWindow", u"Open Settings", None)
-        print(f'_btnOpenSettings: {_btnOpenSettings}')
-        _english = QCoreApplication.translate("MainWindow", u"English", None)
-        print(f'_english: {_english}')
 
         self.ui.retranslateUi(self)
 
@@ -89,21 +83,20 @@ class MainWindow(QMainWindow):
         qr.moveCenter(cp)
         return qr.topLeft()
 
-    # def center(self):
-    #     """Center window on screen."""
-    #     qr = self.frameGeometry()
-    #     cp = QDesktopWidget().availableGeometry().center()
-    #     qr.moveCenter(cp)
-    #     self.move(qr.topLeft())
-
     def openSettingsWindow(self):
         self.settingsWindow = SettingsWindow()
+        self.settingsWindow.ui.txtSetText.setText(self.ui.lblSimpleText.text())
         self.settingsWindow.show()
 
     # Close window on ESC key
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
             self.close()
+
+    def changeEvent(self, event):
+        if event.type() == QEvent.LanguageChange:
+            self.ui.retranslateUi(self)
+        super(MainWindow, self).changeEvent(event)
 
     def closeEvent(self, event: QCloseEvent) -> None:
         """Close window."""
@@ -118,8 +111,6 @@ class MainWindow(QMainWindow):
 
         event.accept()
 
-        # self.settings.setValue("main_window/height", self.rect().height())
-        # self.settings.setValue("main_window/width", self.rect().width())
         self.settings.setValue("main_window/size", self.size())
         self.settings.setValue("main_window/pos", self.pos())
 

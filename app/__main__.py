@@ -11,6 +11,7 @@ from .ui import resources_rc  # noqa
 from .helpers.utils import load_translations
 
 def main():
+
     app = QApplication(sys.argv)
 
     app.setWindowIcon(QIcon(':/icons/app.svg'))
@@ -24,9 +25,7 @@ def main():
     app.setStyleSheet(QTextStream(f).readAll())
     f.close()
 
-    # load_translations(app, 'cs-CZ')
     trans = QTranslator()
-    # trans.load(':/translations/' + QLocale.system().name() + '.qm')
     trans.load(':/translations/cs_CZ.qm')
     app.installTranslator(trans)
 
