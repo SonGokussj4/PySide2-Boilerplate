@@ -1,99 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="cs_CZ">
+<!DOCTYPE TS>
+<TS version="2.1" language="cs_CZ">
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="34"/>
-        <source>HELLO!</source>
-        <translation type="obsolete">AHOJ!</translation>
-    </message>
-    <message>
-        <location filename="resources/ui/MainWindow.ui" line="14"/>
+        <location filename="../ui/MainWindow.ui" line="+14"/>
         <source>App</source>
         <translation>App</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="34"/>
+        <location line="+20"/>
         <source>This is a simple text</source>
         <translation>Tohle je jednoduchý text</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="41"/>
+        <location line="+7"/>
         <source>Open Settings</source>
-        <translation>Otevřít Nastavení</translation>
+        <translation type="unfinished">Otevřít Nastavení</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="58"/>
+        <location line="+17"/>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation type="unfinished">Jazyk</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="91"/>
+        <location line="+33"/>
         <source>English</source>
-        <translation>Angličtina</translation>
+        <translation type="unfinished">Angličtina</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="103"/>
+        <location line="+12"/>
         <source>Czech</source>
-        <translation>Čeština</translation>
+        <translation type="unfinished">Čeština</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="65"/>
+        <location line="-38"/>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation type="unfinished">Nastavení</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="71"/>
+        <location line="+6"/>
         <source>Help</source>
-        <translation>Nápověda</translation>
+        <translation type="unfinished">Nápověda</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="108"/>
+        <location line="+37"/>
         <source>About</source>
-        <translation>O Aplikaci</translation>
+        <translation type="unfinished">O Aplikaci</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="113"/>
+        <location line="+5"/>
         <source>Preferences...</source>
-        <translation>Nastavení...</translation>
+        <translation type="unfinished">Nastavení...</translation>
     </message>
 </context>
 <context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="17"/>
+        <location filename="../ui/SettingsWindow.ui" line="+17"/>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation type="unfinished">Nastavení</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="60"/>
+        <location line="+43"/>
         <source>Czech</source>
-        <translation>Čeština</translation>
+        <translation type="unfinished">Čeština</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="65"/>
+        <location line="+5"/>
         <source>English</source>
-        <translation>Angličtina</translation>
+        <translation type="unfinished">Angličtina</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="70"/>
+        <location line="+5"/>
         <source>France</source>
-        <translation>Francouzština</translation>
+        <translation type="unfinished">Francouzština</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="35"/>
-        <source>Langauge:</source>
-        <translation type="obsolete">Jazyk:</translation>
-    </message>
-    <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="35"/>
+        <location line="-35"/>
         <source>Apply</source>
-        <translation>Použít</translation>
+        <translation type="unfinished">Použít</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="45"/>
+        <location line="+10"/>
         <source>SetText</source>
-        <translation>Nastav text</translation>
+        <translation type="unfinished">Nastav text</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Reset Settings</source>
+        <translation type="unfinished">Resetovat Nastavení</translation>
     </message>
 </context>
 </TS>

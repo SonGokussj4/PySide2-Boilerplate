@@ -1,94 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="en_US">
+<!DOCTYPE TS>
+<TS version="2.1" language="en_US">
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="14"/>
-        <source>App</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="resources/ui/MainWindow.ui" line="34"/>
+        <location filename="../ui/MainWindow.ui" line="+34"/>
         <source>This is a simple text</source>
         <translation>This is a simple text</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="58"/>
+        <location line="+24"/>
         <source>Language</source>
-        <translation>Language</translation>
+        <translation type="unfinished">Language</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="91"/>
+        <location line="+33"/>
         <source>English</source>
-        <translation>English</translation>
+        <translation type="unfinished">English</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="103"/>
+        <location line="+12"/>
         <source>Czech</source>
-        <translation>Czech</translation>
+        <translation type="unfinished">Czech</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="41"/>
+        <location line="-62"/>
         <source>Open Settings</source>
-        <translation>Open Settings</translation>
+        <translation type="unfinished">Open Settings</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="65"/>
+        <location line="+24"/>
         <source>Settings</source>
-        <translation>Settings</translation>
+        <translation type="unfinished">Settings</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="71"/>
+        <location line="+6"/>
         <source>Help</source>
-        <translation>Help</translation>
+        <translation type="unfinished">Help</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="108"/>
+        <location line="+37"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation type="unfinished">About</translation>
     </message>
     <message>
-        <location filename="resources/ui/MainWindow.ui" line="113"/>
+        <location line="+5"/>
         <source>Preferences...</source>
-        <translation>Preferences...</translation>
+        <translation type="unfinished">Preferences...</translation>
+    </message>
+    <message>
+        <location line="-99"/>
+        <source>App</source>
+        <translation>App</translation>
     </message>
 </context>
 <context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="17"/>
+        <location filename="../ui/SettingsWindow.ui" line="+17"/>
         <source>Settings</source>
-        <translation>Settings</translation>
+        <translation type="unfinished">Settings</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="60"/>
+        <location line="+43"/>
         <source>Czech</source>
-        <translation>Czech</translation>
+        <translation type="unfinished">Czech</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="65"/>
+        <location line="+5"/>
         <source>English</source>
-        <translation>English</translation>
+        <translation type="unfinished">English</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="70"/>
+        <location line="+5"/>
         <source>France</source>
         <translation>France</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="35"/>
-        <source>Langauge:</source>
-        <translation type="obsolete">Language:</translation>
-    </message>
-    <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="35"/>
+        <location line="-35"/>
         <source>Apply</source>
-        <translation>Apply</translation>
+        <translation type="unfinished">Apply</translation>
     </message>
     <message>
-        <location filename="resources/ui/SettingsWindow.ui" line="45"/>
+        <location line="+10"/>
         <source>SetText</source>
-        <translation>Set text</translation>
+        <translation type="unfinished">Set text</translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Reset Settings</source>
+        <translation type="unfinished">Reset Settings</translation>
     </message>
 </context>
 </TS>
