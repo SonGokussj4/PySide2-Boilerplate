@@ -1,12 +1,13 @@
 from PySide2.QtWidgets import QMainWindow, QActionGroup, QDesktopWidget, QMessageBox, QApplication, QAction, QMenu
 from PySide2.QtGui import Qt, QCloseEvent, QResizeEvent
-from PySide2.QtCore import QSettings, QPoint, QSize, QTranslator, QCoreApplication, QEvent
+from PySide2.QtCore import QSettings, QPoint, QSize, QTranslator, QCoreApplication, QEvent, QLocale
 
 from .SettingsWindow import SettingsWindow
 from ..ui.MainWindow_ui import Ui_MainWindow
-from ..helpers.utils import get_language_code, get_language_from_code
+from ..helpers.utils import get_language_from_code, load_translations
 from ..helpers.logging import setup_logger
-from ..helpers import constants
+from ..helpers import constants, win_functions
+
 
 logger = setup_logger(__name__)
 logger.debug('This MainWindow message should appear on the console')
@@ -14,8 +15,6 @@ logger.debug('This MainWindow message should appear on the console')
 
 class MainWindow(QMainWindow):
     """Main Window."""
-
-    EXIT_CODE_REBOOT = -123
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -28,7 +27,7 @@ class MainWindow(QMainWindow):
         logger.debug(f"Settings filepath: {self.settings.fileName()}")
 
         # Windows size
-        self.setSizeAndPosition()
+        win_functions.setSizeAndPosition(self)
 
         # Fix QAction gruping
         action_group = QActionGroup(self)
@@ -44,15 +43,17 @@ class MainWindow(QMainWindow):
 
         # Set language
         self.translator = QTranslator()
-        # self.changeLanguage(get_language_code(self.settings.value("language", 'en_US')))
 
         # Default values
         self.UIComponents()
 
     def UIComponents(self):
-        language_code = self.settings.value("language", 'en_US')
+        """Set UI components."""
+        default_language_code = QLocale.system().name()
+        language_code = self.settings.value("language", default_language_code, type=str)
         self.changeLanguage(language_code)
 
+        # Set checkbox of selected language
         language_name = get_language_from_code(language_code)
         language_object = [self.ui.action_English, self.ui.action_Czech][["English", "Czech"].index(language_name)]
         language_object.setChecked(True)
@@ -62,26 +63,8 @@ class MainWindow(QMainWindow):
         self.settings.setValue("language", language_code)
 
         # Set language
-        self.translator.load(f':/translations/{language_code}.qm')
-        QApplication.instance().installTranslator(self.translator)
-
+        load_translations(translator=self.translator, code=language_code)
         self.ui.retranslateUi(self)
-
-    def setSizeAndPosition(self):
-        """Set window size and position."""
-        # Get window size and position from settings
-        _size = QSize(self.settings.value("main_window/size", QSize(*constants.default_main_window_size)))
-        _pos = QPoint(self.settings.value("main_window/pos", self.getCenterPoint()))
-        # Set window size and position
-        size = _size if _size else QSize(*constants.default_main_window_size)
-        pos = _pos if _pos else self.getCenterPoint()
-        self.setGeometry(*pos.toTuple(), *size.toTuple())
-
-    def getCenterPoint(self):
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        return qr.topLeft()
 
     def openSettingsWindow(self):
         self.settingsWindow = SettingsWindow()
@@ -101,7 +84,7 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event: QCloseEvent) -> None:
         """Close window."""
         # close = QMessageBox()
-        # close.setText("You sure?")
+        # close.setText(QApplication.translate('MainWindow', 'You Sure?'))
         # close.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
         # close = close.exec()
 
@@ -111,7 +94,8 @@ class MainWindow(QMainWindow):
 
         event.accept()
 
-        self.settings.setValue("main_window/size", self.size())
-        self.settings.setValue("main_window/pos", self.pos())
+        win_name = self.objectName()
+        self.settings.setValue(f"{win_name}/size", self.size())
+        self.settings.setValue(f"{win_name}/pos", self.pos())
 
         return super().closeEvent(event)

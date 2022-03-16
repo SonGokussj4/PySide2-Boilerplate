@@ -1,10 +1,29 @@
-from PySide2.QtCore import QTranslator
+from PySide2.QtCore import QTranslator, QLocale
+from PySide2.QtWidgets import QApplication
+
 from ..helpers.logging import setup_logger
 
 logger = setup_logger(__name__)
 
+lang = {
+    "cs_CZ": [
+        "Čeština",
+        "Czech"
+    ],
+    "en_US": [
+        "Angličtina",
+        "English"
+    ]
+}
+# key = [key for key, value in lang.items() if "Czech" in value][0]
 
-def get_language_code(lang_text):
+
+def get_language_code(lang_text: str) -> str:
+    """Get language-code from language name.
+
+    Example:
+        - get_language_code('Czech') -> 'cs_CZ'
+    """
     if lang_text in {"Czech", "Čeština"}:
         return "cs_CZ"
 
@@ -15,7 +34,12 @@ def get_language_code(lang_text):
     return "cs_CZ"
 
 
-def get_language_from_code(lang_code):
+def get_language_from_code(lang_code: str) -> str:
+    """Get language name from language-code.
+
+    Example:
+        - get_language_from_code('cs_CZ') -> 'Czech'
+    """
     if lang_code == "cs_CZ":
         return "Czech"
 
@@ -26,9 +50,15 @@ def get_language_from_code(lang_code):
     return "Czech"
 
 
-def load_translations(app, code):
-    """Load translations by code."""
-    trans = QTranslator()
-    trans.load(f':/translations/{code}.qm')
-    app.installTranslator(trans)
-    return trans
+def load_translations(app: QApplication = None, translator: QTranslator = None, code: str = QLocale.system().name()) -> QTranslator:
+    """Load translations by language-code."""
+    if not app:
+        app = QApplication.instance()
+
+    if not translator:
+        translator = QTranslator()
+
+    translator.load(f':/translations/{code}.qm')
+    app.installTranslator(translator)
+
+    return translator
