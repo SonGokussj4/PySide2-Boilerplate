@@ -18,6 +18,9 @@ lupdate:
 	@echo "| :: Updating .ts files"
 	lupdate app.pro
 
+lupdate_win:
+	C:\Qt\5.15.2\mingw81_64\bin\lupdate.exe app.pro
+
 lupdate_noloc:
 	@echo "| :: lupdate -no-location app.pro"
 	lupdate -locations none app.pro
@@ -27,6 +30,13 @@ release:
 	lrelease app.pro
 
 translations: lupdate release
+
+release_win:
+	C:\Qt\5.15.2\mingw81_64\bin\lrelease.exe app.pro
+
+build: lupdate release
+
+build_win: lupdate_win releaes_win
 
 git: clean ui lupdate_noloc release
 
