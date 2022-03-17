@@ -1,7 +1,7 @@
+from PySide2 import QtCore
 from PySide2.QtGui import Qt, QCloseEvent, QHoverEvent
 from PySide2.QtCore import QTranslator, QCoreApplication, QSettings, QPoint, QSize, Slot
 from PySide2.QtWidgets import QWidget, QApplication, QDesktopWidget
-from PySide2 import QtCore
 
 from ..helpers.logging import setup_logger
 from ..ui.SettingsWindow_ui import Ui_SettingsWindow
@@ -12,14 +12,14 @@ logger = setup_logger(__name__)
 logger.debug('This message should appear on the console')
 
 # https://stackoverflow.com/a/37928086/4574809
-# settings = QSettings(QSettings.IniFormat, QSettings.UserScope, "xh", "chanchan")
+
 
 class SettingsWindow(QWidget):
     """Settings Window."""
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        # super(SettingsWindow, self).__init__(parent)
+
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
 
         self.ui = Ui_SettingsWindow()
@@ -77,9 +77,3 @@ class SettingsWindow(QWidget):
         self.settings.setValue(f"{win_name}/pos", self.pos())
 
         return super().closeEvent(event)
-
-    def hoverEvent(self, event: QHoverEvent) -> None:
-        """Close window."""
-        print('hovering')
-
-        # return super().closeEvent(event)

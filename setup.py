@@ -36,14 +36,14 @@ if has_build_ui:
         """Build UI, resources and translations."""
 
         def run(self):
-            # build translations
-            check_call(["pyside2-lupdate", "app.pro"])
+            # # build translations
+            # check_call(["pyside2-lupdate", "app.pro"])
 
-            lrelease = os.environ.get("LRELEASE_BIN")
-            if not lrelease:
-                lrelease = "lrelease"
+            # lrelease = os.environ.get("LRELEASE_BIN")
+            # if not lrelease:
+            #     lrelease = "lrelease"
 
-            check_call([lrelease, "app.pro"])
+            # check_call([lrelease, "app.pro"])
 
             # build UI & resources
             build_ui.run(self)

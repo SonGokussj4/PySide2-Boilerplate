@@ -4,52 +4,56 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/MainWindow.ui" line="+14"/>
+        <location filename="../ui/MainWindow.ui" line="14"/>
         <source>App</source>
         <translation>App</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location filename="../ui/MainWindow.ui" line="34"/>
         <source>This is a simple text</source>
         <translation>Tohle je jednoduchý text</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location filename="../ui/MainWindow.ui" line="41"/>
         <source>Open Settings</source>
         <translation type="unfinished">Otevřít Nastavení</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location filename="../ui/MainWindow.ui" line="58"/>
         <source>Language</source>
         <translation type="unfinished">Jazyk</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location filename="../ui/MainWindow.ui" line="65"/>
+        <source>&amp;Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainWindow.ui" line="91"/>
         <source>English</source>
         <translation type="unfinished">Angličtina</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location filename="../ui/MainWindow.ui" line="103"/>
         <source>Czech</source>
         <translation type="unfinished">Čeština</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location filename="../ui/MainWindow.ui" line="71"/>
         <source>Help</source>
         <translation type="unfinished">Nápověda</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location filename="../ui/MainWindow.ui" line="108"/>
         <source>About</source>
         <translation type="unfinished">O Aplikaci</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location filename="../ui/MainWindow.ui" line="113"/>
         <source>Preferences...</source>
         <translation type="unfinished">Nastavení...</translation>
     </message>
@@ -57,37 +61,37 @@
 <context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/SettingsWindow.ui" line="+17"/>
+        <location filename="../ui/SettingsWindow.ui" line="17"/>
         <source>Settings</source>
         <translation type="unfinished">Nastavení</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location filename="../ui/SettingsWindow.ui" line="60"/>
         <source>Czech</source>
         <translation type="unfinished">Čeština</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location filename="../ui/SettingsWindow.ui" line="65"/>
         <source>English</source>
         <translation type="unfinished">Angličtina</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location filename="../ui/SettingsWindow.ui" line="70"/>
         <source>France</source>
         <translation type="unfinished">Francouzština</translation>
     </message>
     <message>
-        <location line="-35"/>
+        <location filename="../ui/SettingsWindow.ui" line="35"/>
         <source>Apply</source>
         <translation type="unfinished">Použít</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location filename="../ui/SettingsWindow.ui" line="45"/>
         <source>SetText</source>
         <translation type="unfinished">Nastav text</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location filename="../ui/SettingsWindow.ui" line="78"/>
         <source>Reset Settings</source>
         <translation type="unfinished">Resetovat Nastavení</translation>
     </message>

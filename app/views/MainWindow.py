@@ -1,6 +1,9 @@
+from pathlib import Path
 from PySide2.QtWidgets import QMainWindow, QActionGroup, QDesktopWidget, QMessageBox, QApplication, QAction, QMenu
 from PySide2.QtGui import Qt, QCloseEvent, QResizeEvent
-from PySide2.QtCore import QSettings, QPoint, QSize, QTranslator, QCoreApplication, QEvent, QLocale
+from PySide2.QtCore import QSettings, QPoint, QSize, QTranslator, QCoreApplication, QEvent, QLocale, Slot
+
+import openpyxl as xlsx
 
 from .SettingsWindow import SettingsWindow
 from ..ui.MainWindow_ui import Ui_MainWindow
@@ -35,7 +38,7 @@ class MainWindow(QMainWindow):
         action_group.addAction(self.ui.action_Czech)
 
         # Slots and Signals
-        self.ui.btnOpenSettings.clicked.connect(self.openSettingsWindow)
+        # self.ui.btnOpenSettings.clicked.connect(self.openSettingsWindow)
 
         # Actions
         self.ui.action_English.triggered.connect(lambda: self.changeLanguage('en_US'))
@@ -58,6 +61,9 @@ class MainWindow(QMainWindow):
         language_object = [self.ui.action_English, self.ui.action_Czech][["English", "Czech"].index(language_name)]
         language_object.setChecked(True)
 
+        # Initial values
+        self.loadInitialValues()
+
     def changeLanguage(self, language_code):
         logger.debug(f"Changing language to: {language_code}")
         self.settings.setValue("language", language_code)
@@ -66,10 +72,62 @@ class MainWindow(QMainWindow):
         load_translations(translator=self.translator, code=language_code)
         self.ui.retranslateUi(self)
 
-    def openSettingsWindow(self):
+    @Slot(str)
+    def on_cboMatGroup_currentTextChanged(self, text):
+        print("on_cboMatGroup_currentTextChanged")
+        self._updateCboMatSub(text)
+
+    def loadInitialValues(self):
+        """Load initial values."""
+        # TEST PURPOSES
+        self.ui.cboMatGroup.addItems(("A", "B", "C"))
+
+        # open xlsx file
+        workbook = xlsx.load_workbook(Path("DATA/example1.xlsx"))
+        print(f'workbook: {workbook}')
+        # get all sheets
+        sheets = workbook.sheetnames
+        print(f'sheets: {sheets}')
+
+        csv_ws = workbook['csv']
+        csv_tables = csv_ws.tables
+        print([tbl for tbl in csv_tables])
+
+        structures_ws = workbook['Structures']
+        structures_tables = structures_ws.tables
+        # https://openpyxl.readthedocs.io/en/latest/worksheet_tables.html
+        first_table = structures_tables["tblMAT_STD"]
+        print(f'first_table: {first_table}')
+        print(f'first_table.name: {first_table.name}')
+        columns = [col.name for col in first_table.tableColumns]
+        print(f'columns[{type(columns)}]: {columns}')
+        data = structures_ws[first_table.ref]
+        content = [[cell.value for cell in row] for row in data]
+        header = content[0]
+        rest = content[1:]
+        print(f'header: {header}')
+        print(f'rest: {rest}')
+
+    def _updateCboMatSub(self, text):
+        self.ui.cboMatSub.clear()
+        if text == "A":
+            self.ui.cboMatSub.addItems(("1", "2", "3"))
+        elif text == "B":
+            self.ui.cboMatSub.addItems(("4", "5", "6"))
+        elif text == "C":
+            self.ui.cboMatSub.addItems(("7", "8", "9"))
+
+    @Slot()
+    def on_BtnOpenSettings_clicked(self):
         self.settingsWindow = SettingsWindow()
         self.settingsWindow.ui.txtSetText.setText(self.ui.lblSimpleText.text())
         self.settingsWindow.show()
+
+    @Slot()
+    def on_actionPreferences_triggered(self):
+        """Open settings window."""
+        print("Action Preferences triggered")
+        self.openSettingsWindow()
 
     # Close window on ESC key
     def keyPressEvent(self, event):
